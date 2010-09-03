@@ -6,15 +6,16 @@
 #
 # Written on a nozomi shinkansen so you know it's awesome
 
-def git_commit(message)
+def git_commit(message, &block)
+  yield if block
   git :add => '.'
   git :commit => "-am'#{message}'"
 end
 
 # init the repo and commit the rails generated files to git
-def initial_git_commit
+def initial_git_commit(message)
   git :init
-  git_commit "Initial commit"
+  git_commit message
 end
 
 def copy_db_yml
@@ -74,7 +75,7 @@ end
 # run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
 # 
 
-initial_git_commit
+initial_git_commit "Initial commit from rails"
 add_gemfile
 copy_db_yml
 remove_public_files
