@@ -57,11 +57,12 @@ gem 'capistrano'
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'webrat'
+  gem 'capybara'
+  
   gem 'ruby-debug'
   gem 'awesome_print', :require => 'ap'
-  gem "wirble"
-  gem "hirb"
+  gem 'wirble'
+  gem 'hirb'
 end
   RUBY
 end
