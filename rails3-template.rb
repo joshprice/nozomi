@@ -9,7 +9,7 @@
 def git_commit(message, &block)
   yield if block
   git :add => '.'
-  git :commit => "-am'#{message}'"
+  git :commit => "-am'Nozomi: #{message}'"
 end
 
 # init the repo and commit the rails generated files to git
@@ -76,14 +76,13 @@ end
 # 
 
 initial_git_commit "Initial commit from rails"
-add_gemfile
-copy_db_yml
-remove_public_files
-#install_jquery
-git_commit "Initial commit with changes from Rails 3 template"
+git_commit "Remove public files"  { remove_public_files }
+git_commit "Bundler gemfile"      { add_gemfile }
+git_commit "Copy database.yml"    { copy_db_yml }
+git_commit "Install jQuery"       { install_jquery } 
 
 puts <<-MSG
-Rails template complete! Your next steps are:
+Nozomi Rails template complete! Your next steps are:
 
   1. Edit config/database.yml
   2. rake db:create:all
