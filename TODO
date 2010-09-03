@@ -1,0 +1,5 @@
+TODO list
+
+[ ] build up gemfile piece by piece based on choices
+[ ] choose persistence (postgresql, mysql, mongodb or just stick with rails)
+[ ] choose deployment (or just go with capistrano by default)
