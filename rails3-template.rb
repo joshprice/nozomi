@@ -36,23 +36,30 @@ end
 
 def add_gemfile
   file "Gemfile", <<-RUBY
-    source 'http://rubygems.org'
+# TODO shouldn't this be gemcutter?
+source 'http://rubygems.org'
 
-    gem 'rails', '3.0.0'
-    gem 'sqlite3-ruby', :require => 'sqlite3'
-    gem 'haml'
-    gem 'compass'
-    gem 'capistrano'
+gem 'rails', '3.0.0'
 
-    group :development, :test do
-      gem 'rspec'
-      gem 'rspec-rails'
-      gem 'webrat'
-      gem 'ruby-debug'
-      gem 'awesome_print', :lib => 'ap'
-      gem "wirble"
-      gem "hirb"
-    end
+# view
+gem 'haml'
+gem 'compass'
+
+# persistence
+gem 'sqlite3-ruby', :require => 'sqlite3'
+
+# deployment
+gem 'capistrano'
+
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'webrat'
+  gem 'ruby-debug'
+  gem 'awesome_print', :require => 'ap'
+  gem "wirble"
+  gem "hirb"
+end
   RUBY
 end
 
