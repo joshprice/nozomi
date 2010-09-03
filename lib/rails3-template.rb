@@ -9,7 +9,7 @@
 def git_commit(message, &block)
   yield if block
   git :add => '.'
-  git :commit => "-am'Nozomi: #{message}'"
+  git :commit => "-m'Nozomi: #{message}'"
 end
 
 # init the repo and commit the rails generated files to git
