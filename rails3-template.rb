@@ -30,7 +30,7 @@ end
 def install_jquery
   run 'mkdir -p public/javascripts/vendor'
   inside('public/javascripts/vendor') do
-    run 'wget http://jqueryjs.googlecode.com/files/jquery-1.4.2.min.js'
+    run 'wget http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
   end
 end
 
