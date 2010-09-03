@@ -1,9 +1,10 @@
+# Nozomi: An opinionated Rails template
 #
 # Assumes you skipped the Gemfile, test/unit and prototype JS which is done through options like this:
 #
 #   rails new myapp -m rails3-template.rb --skip-gemfile --skip-test-unit --skip-prototype
 #
-#
+# Written on a nozomi shinkansen so you know it's awesome
 
 def git_commit(message)
   git :add => '.'
