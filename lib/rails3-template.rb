@@ -29,9 +29,11 @@ def remove_public_files
 end
 
 def install_jquery
+  filename = "jquery-1.4.2.min.js"
+  url = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
   run 'mkdir -p public/javascripts/vendor'
   inside('public/javascripts/vendor') do
-    run 'wget http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+    run 'wget --output-document=#{filename} #{url}'
   end
 end
 
