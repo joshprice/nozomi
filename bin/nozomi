@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+# TODO use thor or trollop to get the command line options
+
+begin
+  project_name = ARGV[0]
+  raise unless project_name
+  template_path = "lib/rails3-template.rb"
+
+  cmd = "rails new #{project_name} -m #{template_path} --skip-gemfile --skip-test-unit --skip-prototype"
+  puts cmd
+  system cmd 
+rescue
+  puts "Usage: nozomi <app_name>"
+end
