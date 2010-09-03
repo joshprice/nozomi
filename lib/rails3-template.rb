@@ -76,10 +76,10 @@ end
 # 
 
 initial_git_commit "Initial commit from rails"
-git_commit "Remove public files"  { remove_public_files }
-git_commit "Bundler gemfile"      { add_gemfile }
-git_commit "Copy database.yml"    { copy_db_yml }
-git_commit "Install jQuery"       { install_jquery } 
+git_commit("Remove public files") { remove_public_files }
+git_commit("Bundler gemfile")     { add_gemfile }
+git_commit("Copy database.yml")   { copy_db_yml }
+git_commit("Install jQuery")      { install_jquery }
 
 puts <<-MSG
 Nozomi Rails template complete! Your next steps are:
