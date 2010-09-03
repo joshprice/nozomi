@@ -28,12 +28,23 @@ def remove_public_files
   end
 end
 
+def add_readme
+  run "rm README"
+  file "README.markdown", <<-MARKDOWN
+README
+======
+
+TODO fill out your application documentation
+  MARKDOWN
+end
+
 def install_jquery
   filename = "jquery-1.4.2.min.js"
   url = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
   run 'mkdir -p public/javascripts/vendor'
   inside('public/javascripts/vendor') do
-    run 'wget --output-document=#{filename} #{url}'
+    result = run "wget --output-document=#{filename} #{url}"
+    raise "Cannot download jquery. Please check your internet connection..." unless result == 0
   end
 end
 
@@ -70,27 +81,23 @@ end
 
 # generate 'rspec'
 # run "haml --rails #{run "pwd"}"
-# 
-# 
-#  
-# 
-# run 'echo TODO > README'
-# run 'touch tmp/.gitignore log/.gitignore vendor/.gitignore'
-# run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
-# 
 
-initial_git_commit "Initial commit from rails"
-git_commit("Remove public files") { remove_public_files }
-git_commit("Bundler gemfile")     { add_gemfile }
-git_commit("Copy database.yml")   { copy_db_yml }
-git_commit("Install jQuery")      { install_jquery }
+begin
+  initial_git_commit "Initial commit from rails"
+  git_commit("Remove public files") { remove_public_files }
+  git_commit("Readme")              { add_readme }
+  git_commit("Bundler gemfile")     { add_gemfile }
+  git_commit("Copy database.yml")   { copy_db_yml }
+  git_commit("Install jQuery")      { install_jquery }
 
-puts <<-MSG
-Nozomi Rails template complete! Your next steps are:
+  puts <<-MSG
+  Nozomi Rails template complete! Your next steps are:
 
-  1. Edit config/database.yml
-  2. rake db:create:all
-  3. rake db:migrate (so we can get a db/schema.rb)
-  4. Get to work!
-MSG
-
+    1. Edit config/database.yml
+    2. rake db:create:all
+    3. rake db:migrate (so we can get a db/schema.rb)
+    4. Get to work!
+  MSG
+rescue Exception => e
+  puts "\n#{e.message}"
+end
