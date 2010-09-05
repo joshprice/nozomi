@@ -6,6 +6,14 @@
 #
 # Written on a nozomi shinkansen so you know it's awesome
 
+
+GEMS = %w(haml compass formtastic decent_exposure capistrano)
+TEST_GEMS = %w(rspec rspec-rails capybara webrat)
+
+def gem_def(gem_name)
+  "gem '#{gem_name}'"
+end
+
 def git_commit(message, &block)
   yield if block
   git :add => '.'
@@ -55,21 +63,13 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
-# view
-gem 'haml'
-gem 'compass'
-gem 'formtastic'
+#{GEMS.map{ |gem| gem_def(gem) }.join("\n")}
 
 # persistence
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-# deployment
-gem 'capistrano'
-
 group :development, :test do
-  gem 'rspec'
-  gem 'rspec-rails'
-  gem 'capybara'
+  #{TEST_GEMS.map{ |gem| gem_def(gem) }.join("\n  ")}
   
   gem 'ruby-debug'
   gem 'awesome_print', :require => 'ap'
@@ -86,17 +86,17 @@ begin
   initial_git_commit "Initial commit from rails"
   git_commit("Remove public files") { remove_public_files }
   git_commit("Readme")              { add_readme }
-  git_commit("Bundler gemfile")     { add_gemfile }
   git_commit("Copy database.yml")   { copy_db_yml }
-  git_commit("Install jQuery")      { install_jquery }
+  #git_commit("Install jQuery")      { install_jquery }
+  git_commit("Bundler gemfile")     { add_gemfile }
 
   puts <<-MSG
   Nozomi Rails template complete! Your next steps are:
 
-    1. Edit config/database.yml
-    2. rake db:create:all
-    3. rake db:migrate (so we can get a db/schema.rb)
-    4. Get to work!
+    1. Edit config/database.yml to match your database config
+    2. rake db:create:all (to create all databases)
+    3. rake db:migrate (to create a db/schema.rb)
+    4. Start building your app!
   MSG
 rescue Exception => e
   puts "\n#{e.message}"
