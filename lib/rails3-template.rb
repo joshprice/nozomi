@@ -32,12 +32,12 @@ end
 
 def remove_public_files
   %w{index.html favicon.ico}.each do |f|
-    run "rm public/#{f}"
+    git :rm => "public/#{f}"
   end
 end
 
 def add_readme
-  run "rm README"
+  git :rm =>  "README"
   file "README.markdown", <<-MARKDOWN
 README
 ======
