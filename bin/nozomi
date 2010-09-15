@@ -22,10 +22,10 @@ with a slight difference of opinions.
   * rspec for testing
   * haml for templating
   * sass and compass for stylesheets
-  * grid-coordinates for an html grid
+  * grid-coordinates for a flexible grid layout
 
-When nozomi is done you'll have a git repo with each step
-of the process checked in a separate commit, so you'll know
+When nozomi is done you'll have a git repo containing your app. 
+Each step of the process is committed individually, so you'll know
 exactly what nozomi did.
 
 Just type
