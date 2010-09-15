@@ -27,7 +27,8 @@ Gem::Specification.new do |s|
      "TODO",
      "VERSION",
      "bin/nozomi",
-     "lib/rails3-template.rb"
+     "lib/rails3-template.rb",
+     "nozomi.gemspec"
   ]
   s.homepage = %q{http://github.com/joshprice/nozomi}
   s.rdoc_options = ["--charset=UTF-8"]
