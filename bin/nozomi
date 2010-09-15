@@ -11,5 +11,26 @@ begin
   puts cmd
   system cmd 
 rescue
-  puts "Usage: nozomi <app_name>"
+  puts <<-USAGE
+  
+Welcome to nozomi, the fastest way to get going on Rails.
+
+nozomi is a simple wrapper for the `rails new` command
+with a slight difference of opinions.
+
+  * git for version control
+  * rspec for testing
+  * haml for templating
+  * sass and compass for stylesheets
+  * grid-coordinates for an html grid
+
+When nozomi is done you'll have a git repo with each step
+of the process checked in a separate commit, so you'll know
+exactly what nozomi did.
+
+Just type
+
+    nozomi <app_name>
+    
+  USAGE
 end
