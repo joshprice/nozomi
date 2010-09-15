@@ -12,15 +12,10 @@ rspec
 
 I don't remember the last time I used Test::Unit, does anybody actually use it anymore?
 
-rspec-integration
------------------
+jquery
+------
 
-Because cucumber is pretty heavyweight and somewhat awkward compared to plain old rspec, (admit it non-devs rarely read or write your stories anyway)
-
-capybara
---------
-
-The best interface for driving any kind of integration specs with Selenium, Webrat, etc
+jQuery is today's default JS framework of choice
 
 haml
 ----
@@ -35,7 +30,7 @@ Now that SCSS is a superset of CSS there should be no arguments here
 compass
 -------
 
-Useful for its library of CSS3 mixins and other useful utility functions
+Useful for its library of CSS3 mixins and other useful utility functions, and a sprite builder called lemonade
 
 grid-coordinates
 ----------------
@@ -45,7 +40,22 @@ Because blueprint and other compass css frameworks are too heavyweight
 decent_exposure
 ---------------
 
-For fashion-model thin controllers, so skinny they're barely there. (Nozomi is also a Japanese fashion model)|
+For fashion-model thin controllers, so skinny they're barely there. (Did you know that Nozomi is also a Japanese fashion model?)
+
+rspec-integration
+-----------------
+
+Because cucumber is pretty heavyweight and somewhat awkward compared to plain old rspec, (admit it non-devs rarely read or write your stories anyway)
+
+capybara
+--------
+
+The best interface for driving any kind of integration specs with Selenium, Webrat, etc
+
+jammit
+------
+
+There's no sense in sending more down the wire than you absolutely have to.
 
 
 
