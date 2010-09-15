@@ -58,8 +58,7 @@ end
 
 def add_gemfile
   file "Gemfile", <<-RUBY
-# TODO shouldn't this be gemcutter?
-source 'http://rubygems.org'
+source 'http://gemcutter.org'
 
 gem 'rails', '3.0.0'
 
