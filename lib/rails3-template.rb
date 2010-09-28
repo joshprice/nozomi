@@ -4,7 +4,12 @@
 #
 #   rails new myapp -m rails3-template.rb --skip-gemfile --skip-test-unit --skip-prototype
 #
-# Written on a nozomi shinkansen so you know it's awesome
+# Written on a nozomi at 300km/h (the fastest of all the Japanese shinkansen trains) so you know it's awesome
+
+# ideas:
+#   make each opinion one change to the gemfile so each commit contains one opinion
+#   .nozomi file or folder created on each nozomi run
+#   -i interactive mode
 
 
 GEMS = %w(haml compass formtastic decent_exposure capistrano)
@@ -51,8 +56,7 @@ def install_jquery
   url = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
   run 'mkdir -p public/javascripts/vendor'
   inside('public/javascripts/vendor') do
-    result = run "wget --output-document=#{filename} #{url}"
-    raise "Cannot download jquery. Please check your internet connection..." unless result == 0
+    run "wget --output-document=#{filename} #{url}"
   end
 end
 
@@ -61,7 +65,6 @@ def add_gemfile
 source 'http://gemcutter.org'
 
 gem 'rails', '3.0.0'
-
 #{GEMS.map{ |gem| gem_def(gem) }.join("\n")}
 
 # persistence
@@ -83,11 +86,11 @@ end
 
 begin
   initial_git_commit "Initial commit from rails"
-  git_commit("Remove public files") { remove_public_files }
-  git_commit("Readme")              { add_readme }
-  git_commit("Copy database.yml")   { copy_db_yml }
-  #git_commit("Install jQuery")      { install_jquery }
-  git_commit("Bundler gemfile")     { add_gemfile }
+  git_commit("Remove public files") { remove_public_files       }
+  git_commit("Readme")              { add_readme                }
+  git_commit("Copy database.yml")   { copy_db_yml               }
+  git_commit("Install jQuery")      { install_jquery            }
+  git_commit("Bundler gemfile")     { add_gemfile               }
 
   puts <<-MSG
   Nozomi Rails template complete! Your next steps are:
