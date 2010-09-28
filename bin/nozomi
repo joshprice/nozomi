@@ -5,7 +5,7 @@
 begin
   project_name = ARGV[0]
   raise unless project_name
-  template_path = "lib/rails3-template.rb"
+  template_path = File.expand_path(File.join(File.dirname(__FILE__), "..", "lib", "rails3-template.rb"))
 
   cmd = "rails new #{project_name} -m #{template_path} --skip-gemfile --skip-test-unit --skip-prototype"
   puts cmd
