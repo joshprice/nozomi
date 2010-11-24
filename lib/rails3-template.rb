@@ -7,13 +7,14 @@
 # Written on a nozomi at 300km/h (the fastest of all the Japanese shinkansen trains) so you know it's awesome
 
 # ideas:
+#   test to see if you have the correct rails version
 #   make each opinion one change to the gemfile so each commit contains one opinion
 #   .nozomi file or folder created on each nozomi run
 #   -i interactive mode
 
 
-GEMS = %w(haml compass formtastic decent_exposure capistrano)
-TEST_GEMS = %w(rspec rspec-rails capybara webrat)
+GEMS = %w(haml compass formtastic decent_exposure)
+TEST_GEMS = %w(rspec rspec-rails capybara)
 
 def gem_def(gem_name)
   "gem '#{gem_name}'"
@@ -51,6 +52,13 @@ TODO fill out your application documentation
   MARKDOWN
 end
 
+def add_landing_page
+  file "public/index.html", <<-HAML
+<h1>Welcome to Nozomi</h1>
+<p>Your app is now ready to customise</p>
+  HAML
+end
+
 def install_jquery
   filename = "jquery-1.4.2.min.js"
   url = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
@@ -73,25 +81,34 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 group :development, :test do
   #{TEST_GEMS.map{ |gem| gem_def(gem) }.join("\n  ")}
   
-  gem 'ruby-debug'
-  gem 'awesome_print', :require => 'ap'
-  gem 'wirble'
-  gem 'hirb'
+  # gem 'ruby-debug'
+  # gem 'awesome_print', :require => 'ap'
+  # gem 'wirble'
+  # gem 'hirb'
 end
   RUBY
 end
 
-# generate 'rspec'
-# run "haml --rails #{run "pwd"}"
+def install_rspec
+  generate 'rspec:install'
+end
 
 begin
   initial_git_commit "Initial commit from rails"
-  git_commit("Remove public files") { remove_public_files       }
-  git_commit("Readme")              { add_readme                }
-  git_commit("Copy database.yml")   { copy_db_yml               }
-  git_commit("Install jQuery")      { install_jquery            }
-  git_commit("Bundler gemfile")     { add_gemfile               }
+  #git_commit("Extend .gitignore ")    {               }
+  git_commit("Remove public files")   { remove_public_files        }
+  git_commit("Readme")                { add_readme                 }
+  git_commit("Bundler gemfile")       { add_gemfile                }
+  git_commit("Bundle install")        { run 'bundle install'       }
+  git_commit("Friendly landing page") { add_landing_page           }
+  git_commit("Copy database.yml")     { copy_db_yml                }
+  git_commit("Install jQuery")        { install_jquery             }
+  git_commit("Install rspec")         { install_rspec              }
+  git_commit("Install compass")       { run 'compass init rails .' }
 
+  # run 'rails server &'
+  # run 'open http://localhost:3000'
+  
   puts <<-MSG
   Nozomi Rails template complete! Your next steps are:
 
