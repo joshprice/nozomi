@@ -56,6 +56,10 @@ def add_landing_page
   file "public/index.html", <<-HAML
 <h1>Welcome to Nozomi</h1>
 <p>Your app is now ready to customise</p>
+<p>Here's exactly what Nozomi did to create this project:</p>
+<pre>
+#{`git log`}
+</pre>
   HAML
 end
 
@@ -100,11 +104,11 @@ begin
   git_commit("Readme")                { add_readme                 }
   git_commit("Bundler gemfile")       { add_gemfile                }
   git_commit("Bundle install")        { run 'bundle install'       }
-  git_commit("Friendly landing page") { add_landing_page           }
   git_commit("Copy database.yml")     { copy_db_yml                }
   git_commit("Install jQuery")        { install_jquery             }
   git_commit("Install rspec")         { install_rspec              }
   git_commit("Install compass")       { run 'compass init rails .' }
+  git_commit("Friendly landing page") { add_landing_page           }
 
   # run 'rails server &'
   # run 'open http://localhost:3000'
