@@ -6,10 +6,11 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "nozomi"
     gem.summary = %Q{Get your rails projects going faster with Nozomi}
-    gem.description = %Q{Opinionated Rails project templating: rspec, capybara, haml, sass, compass, etc}
+    gem.description = %Q{Opinionated Rails project templating: rspec, haml, sass, compass, etc}
     gem.email = "joshcp@gmail.com"
     gem.homepage = "http://github.com/joshprice/nozomi"
     gem.authors = ["Josh Price"]
+    gem.add_dependency("rails", '>=3.0.0')
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
