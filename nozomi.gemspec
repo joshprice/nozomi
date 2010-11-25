@@ -8,12 +8,10 @@ Gem::Specification.new do |s|
   s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.add_dependency('rails', '>= 3.0.0')
-  
   s.authors = ["Josh Price"]
-  s.date = %q{2010-11-24}
+  s.date = %q{2010-11-25}
   s.default_executable = %q{nozomi}
-  s.description = %q{Opinionated Rails project templating: rspec, jquery, haml, sass, compass}
+  s.description = %q{Opinionated Rails project templating: rspec, capybara, haml, sass, compass, etc}
   s.email = %q{joshcp@gmail.com}
   s.executables = ["nozomi"]
   s.extra_rdoc_files = [
