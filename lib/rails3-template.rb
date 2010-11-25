@@ -76,7 +76,7 @@ def add_gemfile
   file "Gemfile", <<-RUBY
 source 'http://gemcutter.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.3'
 #{GEMS.map{ |gem| gem_def(gem) }.join("\n")}
 
 # persistence
