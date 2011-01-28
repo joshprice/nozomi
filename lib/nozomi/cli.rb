@@ -23,19 +23,19 @@ standard set of templates applied are:
   parameter 'APP_NAME', 'The name of the Rails application you want to generate'
   
   def execute
-    puts '', `cat #{template_path}`, '', command if debug?
+    puts '', `cat #{template.path}`, '', command if debug?
     
     system command
   end
   
   private
   
-  def template_path
-    @template_path ||= begin
+  def template
+    @template ||= begin
       if interactive?
-        Nozomi::Interactive.new(app_name).template.path
+        Nozomi::Interactive.new.template
       else
-        Nozomi::Template.new(app_name, 'standard').path
+        Nozomi::Template.new('standard')
       end
     end
   end
@@ -45,6 +45,6 @@ standard set of templates applied are:
   end
   
   def command
-    "rails new #{app_name} -m #{template_path} --database=#{database} --skip-test-unit --skip-prototype"
+    "rails new #{app_name} -m #{template.path} --database=#{database} --skip-test-unit --skip-prototype"
   end
 end

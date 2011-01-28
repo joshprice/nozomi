@@ -1,6 +1,6 @@
 class Nozomi::Template
-  def initialize(app, *templates)
-    file.puts constant_definitions(app), ''
+  def initialize(*templates)
+    file.puts template_path_definition, ''
     file.puts core_template
     
     templates.each do |template|
@@ -24,13 +24,8 @@ class Nozomi::Template
     File.expand_path File.join(File.dirname(__FILE__), '..', 'templates')
   end
   
-  def constant_definitions(app)
-    app = File.join Dir.pwd, app if app[/^[\~\/]/].nil?
-    
-    <<-RUBY
-TemplatePath = '#{template_path}'
-AppPath      = '#{app}'
-    RUBY
+  def template_path_definition
+    "TemplatePath = '#{template_path}'"
   end
   
   def core_template

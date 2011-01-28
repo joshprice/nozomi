@@ -1,6 +1,6 @@
-gem 'decent_exposure', ''
+gem 'decent_exposure', '1.0.0'
 
-bundle
+run 'bundle'
 
 git :add => 'Gemfile Gemfile.lock'
 git :commit => '-m "Adding Decent Exposure"'

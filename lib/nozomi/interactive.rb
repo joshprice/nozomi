@@ -1,10 +1,6 @@
 class Nozomi::Interactive
-  def initialize(app)
-    @app = app
-  end
-  
   def template
-    Nozomi::Template.new(@app, *selected_templates)
+    Nozomi::Template.new(*selected_templates)
   end
   
   private

@@ -1,6 +1,6 @@
 gem 'rspec-rails', '2.4.1', :group => [:development, :test]
 
-bundle
+run 'bundle'
 
 generate 'rspec:install'
 

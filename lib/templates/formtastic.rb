@@ -1,6 +1,6 @@
 gem 'formtastic', '1.2.3'
 
-bundle
+run 'bundle'
 
 generate 'formtastic:install'
 

@@ -2,10 +2,6 @@ def template(name)
   File.join TemplatePath, "#{name}.rb"
 end
 
-def bundle
-  run "cd #{AppPath} && bundle"
-end
-
 apply template('git')
 
 git :rm => 'public/index.html'
