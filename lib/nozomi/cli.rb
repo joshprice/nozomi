@@ -15,22 +15,36 @@ standard set of templates applied are:
   - config/database.example.yml
   DESC
   
+  option ['-i', '--interactive'], :flag, 'Pick and choose the templates'
+  option ['--debug'], :flag, 'Print out debugging statements'
+  option ['-d', '--database'], 'DATABASE', 'Preconfigure for selected database',
+    :default => 'sqlite3'
+  
   parameter 'APP_NAME', 'The name of the Rails application you want to generate'
   
   def execute
-    puts command
-    # system cmd
+    puts '', `cat #{template_path}`, '', command if debug?
+    
+    system command
   end
   
   private
   
   def template_path
-    File.expand_path(
-      File.join(File.dirname(__FILE__), "..", "lib", "rails3-template.rb")
-    )
+    @template_path ||= begin
+      if interactive?
+        Nozomi::Interactive.new(app_name).template.path
+      else
+        Nozomi::Template.new(app_name, 'standard').path
+      end
+    end
+  end
+  
+  def interactive_file
+    @interactive_file ||= Tempfile.new('nozomi')
   end
   
   def command
-    "rails new #{app_name} -m #{template_path} --skip-gemfile --skip-test-unit --skip-prototype"
+    "rails new #{app_name} -m #{template_path} --database=#{database} --skip-test-unit --skip-prototype"
   end
 end
