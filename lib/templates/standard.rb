@@ -1,0 +1,6 @@
+apply template('formtastic')
+apply template('haml-and-compass')
+apply template('decent_exposure')
+apply template('rspec')
+apply template('cucumber')
+apply template('jquery')

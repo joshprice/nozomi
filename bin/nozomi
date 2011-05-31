@@ -1,36 +1,5 @@
 #!/usr/bin/env ruby
 
-# TODO use thor or trollop to get the command line options
+require 'nozomi'
 
-begin
-  project_name = ARGV[0]
-  raise unless project_name
-  template_path = File.expand_path(File.join(File.dirname(__FILE__), "..", "lib", "rails3-template.rb"))
-
-  cmd = "rails new #{project_name} -m #{template_path} --skip-gemfile --skip-test-unit --skip-prototype"
-  puts cmd
-  system cmd 
-rescue
-  puts <<-USAGE
-  
-Welcome to nozomi, the fastest way to get going on Rails.
-
-nozomi is a simple wrapper for the `rails new` command
-with a slight difference of opinions.
-
-  * git for version control
-  * rspec for testing
-  * haml for templating
-  * sass and compass for stylesheets
-  * grid-coordinates for a flexible grid layout
-
-When nozomi is done you'll have a git repo containing your app. 
-Each step of the process is committed individually, so you'll know
-exactly what nozomi did.
-
-Just type
-
-    nozomi <app_name>
-    
-  USAGE
-end
+Nozomi::CLI.run
