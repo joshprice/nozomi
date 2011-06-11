@@ -1,3 +1,12 @@
+Pat's Fork Notes:
+-----------
+
+* Using Bundler to manage gem dependencies
+* Using Clamp for CLI structure
+* -d for selecting database, passed directly through to Rails
+* Templates are now separated into small, distinct files
+* -i for Interactive mode, user can choose any of the provided mini-templates
+
 Nozomi: Faster Rails templating
 ===============================
 
