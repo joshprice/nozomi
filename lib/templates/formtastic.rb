@@ -1,4 +1,4 @@
-gem 'formtastic', '1.2.3'
+gem 'formtastic'
 
 run 'bundle'
 

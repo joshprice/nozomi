@@ -4,7 +4,7 @@ A wrapper for the `rails new` command, with an extended template interface. The
 standard set of templates applied are:
   - initialised git repository
   - haml
-  - compass
+  - sass
   - formtastic
   - decent_exposure
   - rspec
