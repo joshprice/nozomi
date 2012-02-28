@@ -5,5 +5,5 @@ run "echo '//= require bootstrap' >> app/assets/stylesheets/application.css"
 generate 'machinist:install'
 
 git :add => '.'
-git :commit => '-m "Adding Factory Girl"'
+git :commit => '-m "Adding Bootstrap"'
 
