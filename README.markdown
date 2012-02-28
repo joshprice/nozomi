@@ -65,6 +65,18 @@ capybara
 The best interface for driving any kind of integration specs with Selenium, Webrat, etc
 
 
+Installing the gem locally for testing
+======================================
+
+You will probably want to uninstall any existing nozomi gem:
+
+    gem uninstall nozomi
+
+Now run:
+
+    rake install
+
+
 How to contribute
 -----------------
 
