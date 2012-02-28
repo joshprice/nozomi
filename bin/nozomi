@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+BASE_PATH = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+lib_path = File.join(BASE_PATH, 'lib')
+$LOAD_PATH << lib_path
+
 require 'nozomi'
 
 Nozomi::CLI.run
