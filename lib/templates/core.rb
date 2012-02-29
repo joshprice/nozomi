@@ -17,3 +17,4 @@ git :rm => 'README'
 run 'echo > README.markdown'
 git :add => 'README.markdown'
 git :commit => '-m "Switching to Markdown for the README"'
+
