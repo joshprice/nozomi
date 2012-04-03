@@ -1,6 +1,5 @@
-get "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js",  "public/javascripts/jquery.js"
-get "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js", "public/javascripts/jquery-ui.js"
-`curl https://github.com/rails/jquery-ujs/raw/master/src/rails.js -o public/javascripts/rails.js`
+get "http://code.jquery.com/jquery-1.7.1.js",  "vendor/assets/javascripts/jquery.js"
+get "http://code.jquery.com/ui/1.8.18/jquery-ui.js", "vendor/assets/javascripts/jquery-ui.js"
 
-git :add => 'public/javascripts'
+git :add => 'vendor/assets/javascripts'
 git :commit => '-m "Adding jQuery"'

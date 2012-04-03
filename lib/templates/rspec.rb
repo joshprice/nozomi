@@ -1,4 +1,4 @@
-gem 'rspec-rails', '2.4.1', :group => [:development, :test]
+gem 'rspec-rails', :group => [:development, :test]
 
 run 'bundle'
 

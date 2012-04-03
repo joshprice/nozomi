@@ -14,7 +14,7 @@
 
 
 GEMS = %w(haml compass formtastic decent_exposure)
-TEST_GEMS = %w(rspec rspec-rails capybara)
+TEST_GEMS = %w(rspec rspec-rails capybara factory_girl_rails)
 
 def gem_def(gem_name)
   "gem '#{gem_name}'"
@@ -76,7 +76,7 @@ def add_gemfile
   file "Gemfile", <<-RUBY
 source 'http://gemcutter.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.2.0'
 #{GEMS.map{ |gem| gem_def(gem) }.join("\n")}
 
 # persistence
@@ -107,7 +107,7 @@ begin
   git_commit("Copy database.yml")     { copy_db_yml                }
   git_commit("Install jQuery")        { install_jquery             }
   git_commit("Install rspec")         { install_rspec              }
-  git_commit("Install compass")       { run 'compass init rails .' }
+  git_commit("Install sass")          { run 'compass init rails .' }
   git_commit("Friendly landing page") { add_landing_page           }
 
   # run 'rails server &'
