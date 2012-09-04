@@ -10,8 +10,9 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Josh Price"]
   s.date = "2012-02-29"
-  s.description = "Opinionated Rails project templating: rspec, haml, sass, etc"
-  s.email = "joshcp@gmail.com"
+  s.description = "Opinionated Rails project templating"
+  s.summary = "Get your rails projects going faster with Nozomi"
+  s.email = "josh@canoniq.com"
   s.executables = ["nozomi"]
   s.extra_rdoc_files = [
     "LICENSE",
@@ -51,7 +52,6 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/joshprice/nozomi"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.10"
-  s.summary = "Get your rails projects going faster with Nozomi"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
