@@ -6,12 +6,6 @@
 #
 # Written on a nozomi at 300km/h (the fastest of all the Japanese shinkansen trains) so you know it's awesome
 
-# ideas:
-#   test to see if you have the correct rails version
-#   make each opinion one change to the gemfile so each commit contains one opinion
-#   .nozomi file or folder created on each nozomi run
-#   -i interactive mode
-
 
 GEMS = %w(haml compass formtastic decent_exposure)
 TEST_GEMS = %w(rspec rspec-rails capybara factory_girl_rails)

@@ -3,3 +3,9 @@ TODO list
 [ ] build up gemfile piece by piece based on choices
 [ ] choose persistence (postgresql, mysql, mongodb or just stick with rails)
 [ ] choose deployment (or just go with capistrano by default)
+
+# ideas:
+#   test to see if you have the correct rails version
+#   make each opinion one change to the gemfile so each commit contains one opinion
+#   .nozomi file or folder created on each nozomi run
+#   -i interactive mode
