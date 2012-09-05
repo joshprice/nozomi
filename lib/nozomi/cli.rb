@@ -19,6 +19,8 @@ standard set of templates applied are:
   option ['--debug'], :flag, 'Print out debugging statements'
   option ['-d', '--database'], 'DATABASE', 'Preconfigure for selected database',
     :default => 'sqlite3'
+  option ['-j', '--javascript'], 'JAVASCRIPT', 'Preconfigure for selected JavaScript library',
+    :default => 'jquery'
   
   parameter 'APP_NAME', 'The name of the Rails application you want to generate'
   
@@ -45,6 +47,6 @@ standard set of templates applied are:
   end
   
   def command
-    "rails new #{app_name} -m #{template.path} --database=#{database} --skip-test-unit --skip-prototype"
+    "rails new #{app_name} --template=#{template.path} --database=#{database} --javascript=#{javascript} --skip-test-unit"
   end
 end
