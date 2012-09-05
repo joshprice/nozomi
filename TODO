@@ -1,8 +1,17 @@
 TODO list
 
-[ ] build up gemfile piece by piece based on choices
-[ ] choose persistence (postgresql, mysql, mongodb or just stick with rails)
-[ ] choose deployment (or just go with capistrano by default)
+[ ] Creating a new project takes way too long
+  [ ] bundler keeps running, is this really necessary? Can we "bundle exec" everything instead?
+  [ ] Too many warnings
+    [ ] bundle exec guard
+  [ ] Log is really hard to read
+  [ ] Where is the success message at the end?
+  [ ]
+  
+[ ] Errors in tasks should be more obvious
+[ ] ordering of templates is important
+[ ] separation of template components and composed templates (eg core/standard) also dependencies (eg core depends on git)
+
 
 # ideas:
 #   test to see if you have the correct rails version
