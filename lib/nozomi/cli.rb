@@ -16,11 +16,11 @@ standard set of templates applied are:
   DESC
   
   option ['-i', '--interactive'], :flag, 'Pick and choose the templates'
-  option ['--debug'], :flag, 'Print out debugging statements'
   option ['-d', '--database'], 'DATABASE', 'Preconfigure for selected database',
     :default => 'sqlite3'
   option ['-j', '--javascript'], 'JAVASCRIPT', 'Preconfigure for selected JavaScript library',
     :default => 'jquery'
+  option ['--debug'], :flag, 'Print out debugging statements'
   
   parameter 'APP_NAME', 'The name of the Rails application you want to generate'
   
