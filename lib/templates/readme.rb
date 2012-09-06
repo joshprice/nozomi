@@ -5,7 +5,7 @@ nozomi "Instructions" do
     <p>Your app is now ready to customise</p>
     <p>Here's exactly what Nozomi did to create this project:</p>
     <pre>
-    #{`git log`}
+    #{`git log --oneline`}
     </pre>
   HTML
 
