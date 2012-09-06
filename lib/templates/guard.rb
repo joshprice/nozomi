@@ -1,13 +1,15 @@
-gem 'guard', :group => [:development, :test]
-gem 'guard-rspec', :group => [:development, :test]
-gem 'guard-bundler', :group => [:development, :test]
-gem 'guard-rails', :group => [:development, :test]
+nozomi "Install Guard utilities (rspec, bundler, rails)" do
+  
+  gem_group_add :development do
+    gem 'guard'
+    gem 'guard-rspec'
+    gem 'guard-bundler'
+    gem 'guard-rails'
+  end
 
-run 'bundle'
-run 'guard init'
-run 'guard init bundler'
-run 'guard init rspec'
-run 'guard init rails'
-
-git :add => '.'
-git :commit => '-m "Adding Factory Girl"'
+  be_run 'guard init'
+  be_run 'guard init bundler'
+  be_run 'guard init rspec'
+  be_run 'guard init rails'
+  
+end

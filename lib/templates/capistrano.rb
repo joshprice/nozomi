@@ -1,9 +1,11 @@
-gem 'capistrano'
-gem 'capistrano-ext'
-gem 'capistrano_colors'
-
-run 'bundle'
-run 'capify'
-
-git :add => '.'
-git :commit => '-m "Adding Capistrano"'
+nozomi "Install Capistrano" do
+  
+  gem_group_add :deployment do
+    gem 'capistrano'
+    gem 'capistrano-ext'
+    gem 'capistrano_colors'
+  end
+  
+  # not sure why this is in rails standard actions but it is
+  capify!
+end

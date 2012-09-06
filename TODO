@@ -4,9 +4,8 @@ TODO list
   [ ] bundler keeps running, is this really necessary? Can we "bundle exec" everything instead?
   [ ] Too many warnings
     [ ] bundle exec guard
-  [ ] Log is really hard to read
+  [x] Log is really hard to read
   [ ] Where is the success message at the end?
-  [ ]
   
 [ ] Errors in tasks should be more obvious
 [ ] ordering of templates is important

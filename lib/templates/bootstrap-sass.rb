@@ -1,9 +1,9 @@
-gem 'bootstrap-sass', :group => [:assets]
-
-run 'bundle'
-run "echo '//= require bootstrap' >> app/assets/stylesheets/application.css"
-generate 'machinist:install'
-
-git :add => '.'
-git :commit => '-m "Adding Bootstrap"'
+nozomi "Install Twitter bootstrap" do
+  
+  gem_group_add :assets do
+    gem 'bootstrap-sass'
+  end
+  
+  run "echo '//= require bootstrap' >> app/assets/stylesheets/application.css"
+end
 

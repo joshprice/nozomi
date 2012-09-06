@@ -1,9 +1,9 @@
-gem 'factory_girl', :group => [:development, :test]
-gem 'factory_girl_rails', :group => [:development, :test]
+nozomi "Install Factory Girl" do
+  
+  gem_group_add :test do
+    gem 'factory_girl'
+    gem 'factory_girl_rails'
+  end
 
-run 'bundle'
-run 'mkdir -p spec/factories'
-generate 'machinist:install'
-
-git :add => '.'
-git :commit => '-m "Adding Factory Girl"'
+  run 'mkdir -p spec/factories'
+end

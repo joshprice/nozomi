@@ -1,6 +1,5 @@
-gem 'decent_exposure', '1.0.0'
-
-run 'bundle'
-
-git :add => 'Gemfile Gemfile.lock'
-git :commit => '-m "Adding Decent Exposure"'
+nozomi "Install Decent Exposure" do
+  
+  gem 'decent_exposure'
+  
+end

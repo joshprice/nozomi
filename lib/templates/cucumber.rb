@@ -1,10 +1,12 @@
-gem 'capybara', :group => [:test]
-gem 'cucumber-rails', :group => [:development, :test]
-gem 'launchy', :group => [:test]
+nozomi "Install Cucumber with Capybara" do
+  
+  gem_group_add :test do
+    gem 'cucumber-rails'
+    gem 'capybara'
+    gem 'launchy'
+  end
 
-run 'bundle'
-
-generate 'cucumber:install --capybara'
-
-git :add => '.'
-git :commit => '-m "Adding Cucumber"'
+  bundle_install
+  generate 'cucumber:install --capybara'
+  
+end

@@ -7,7 +7,7 @@ module Nozomi
   
   def self.optional_templates
     # Force RSpec first - need it to be before Cucumber.
-    ['rspec'] | (all_templates - ['core', 'git', 'standard'])
+    ['rspec'] | (all_templates - ['core', 'standard'])
   end
 end
 

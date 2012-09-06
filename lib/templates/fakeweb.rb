@@ -1,6 +1,7 @@
-gem 'fakeweb', '1.3.0', :group => [:test]
-
-run 'bundle'
-
-git :add => 'Gemfile Gemfile.lock'
-git :commit => '-m "Adding FakeWeb"'
+nozomi "Add Fakeweb (for mocking out service requests)"
+  
+  gem_group_add :test do
+    gem 'fakeweb'
+  end
+  
+end

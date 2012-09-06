@@ -1,8 +1,9 @@
-gem 'rspec-rails', :group => [:development, :test]
+nozomi "Install RSpec test framework" do
 
-run 'bundle'
+  gem_group_add :test do
+    gem 'rspec-rails'
+  end
 
-generate 'rspec:install'
-
-git :add => '.'
-git :commit => '-m "Adding RSpec"'
+  bundle_install
+  generate 'rspec:install'
+end

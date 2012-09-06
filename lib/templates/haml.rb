@@ -1,6 +1,7 @@
-gem 'haml-rails', :group => [:asset]
-
-run 'bundle'
-
-git :add => 'Gemfile Gemfile.lock'
-git :commit => '-m "Adding HAML"'
+nozomi "Install Haml" do
+  
+  gem_group_add :assets do
+    gem 'haml-rails'
+  end
+  
+end
