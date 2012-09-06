@@ -42,7 +42,7 @@ nozomi "Initial commit" do
 end
 
 nozomi "Remove landing page and images" do 
-  git :rm => 'public/index.html public/favicon.ico app/assets/images/rails.png'
+  git :rm => 'public/index.html app/assets/images/rails.png'
 end
 
 nozomi "Add example database.yml" do
