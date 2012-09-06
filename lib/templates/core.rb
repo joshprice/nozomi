@@ -41,16 +41,8 @@ nozomi "Initial commit" do
   bundle_install :force => true
 end
 
-nozomi "Replace landing page and images" do 
+nozomi "Remove landing page and images" do 
   git :rm => 'public/index.html public/favicon.ico app/assets/images/rails.png'
-  create_file "public/index.html", <<-HTML
-    <h1>Welcome to Nozomi</h1>
-    <p>Your app is now ready to customise</p>
-    <p>Here's exactly what Nozomi did to create this project:</p>
-    <pre>
-    #{`git log`}
-    </pre>
-  HTML
 end
 
 nozomi "Add example database.yml" do

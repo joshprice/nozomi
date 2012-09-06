@@ -9,3 +9,5 @@ apply template('bootstrap-sass')
 
 apply template('formtastic')
 apply template('devise')
+
+apply template('readme')
