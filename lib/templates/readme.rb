@@ -9,13 +9,4 @@ nozomi "Instructions" do
     </pre>
   HTML
 
-  log :enjoy!, <<-MSG
-  Nozomi Rails template complete! Your next steps are:
-
-    1. Edit config/database.yml to match your database config
-    2. rake db:create:all (to create all databases)
-    3. rake db:migrate (to create a db/schema.rb)
-    4. Start building your app!
-  MSG
-  
 end
