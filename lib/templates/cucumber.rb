@@ -6,7 +6,6 @@ nozomi "Install Cucumber with Capybara" do
     gem 'launchy'
   end
 
-  bundle_install
   generate 'cucumber:install --capybara'
   
 end
